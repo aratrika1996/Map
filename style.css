@@ -3,26 +3,30 @@
     visibility: hidden;
 }
 
+.imagemap {
+    position: relative;
+}
+
 #m114 {
     position: absolute;
-    bottom: 140px;
-    left: 150px;
+    top: 451px;
+    left: 159px;
 }
 
 #m135 {
     position: absolute;
-    bottom: 110px;
-    left: 195px;
+    top: 479px;
+    left: 203px;
 }
 
 #m205 {
     position: absolute;
-    bottom: 145px;
-    left: 270px;
+    top: 448px;
+    left: 276px;
 }
 
 #m226 {
     position: absolute;
-    bottom: 270px;
-    left: 330px;
+    top: 321px;
+    left: 335px;
 }
