@@ -24,19 +24,49 @@
         <label for="apartment">Choose apartments:</label>
 
         <select id="list">
-            <option value="1b" selected>1 bedroom</option>
-            <option value="2b">2 bedroom</option>
-        </select>
+                <option value="1b" selected>1 bedroom</option>
+                <option value="2b">2 bedroom</option>
+                <option value="3b">3 bedroom</option>
+            </select>
 
         <button type="button" onclick="searchApartment()">Search</button>
-        
-
     </div>
+
+    <div class="parent">
+        <div class="imagemap">
+            <img src="map.PNG">
+        </div>
+        <canvas id="myCanvas" width="702" height="570" style="border:1px solid #d3d3d3;"></canvas>
+        <i class="fas fa-map-marker-alt fa-2x icon 1b" id="m114" onclick="getFiveMinDistance(this.id)"></i>
+        <i class="fas fa-map-marker-alt fa-2x icon 1b" id="m130" onclick="getFiveMinDistance(this.id)"></i>
+        <i class="fas fa-map-marker-alt fa-2x icon 1b" id="m135" onclick="getFiveMinDistance(this.id)"></i>
+        <i class="fas fa-map-marker-alt fa-2x icon 2b" id="m205" onclick="getFiveMinDistance(this.id)"></i>
+        <i class="fas fa-map-marker-alt fa-2x icon 2b" id="m216" onclick="getFiveMinDistance(this.id)"></i>
+        <i class="fas fa-map-marker-alt fa-2x icon 2b" id="m218" onclick="getFiveMinDistance(this.id)"></i>
+        <i class="fas fa-map-marker-alt fa-2x icon 2b" id="m222" onclick="getFiveMinDistance(this.id)"></i>
+        <i class="fas fa-map-marker-alt fa-2x icon 2b" id="m224" onclick="getFiveMinDistance(this.id)"></i>
+        <i class="fas fa-map-marker-alt fa-2x icon 2b" id="m226" onclick="getFiveMinDistance(this.id)"></i>
+        <i class="fas fa-map-marker-alt fa-2x icon 3b" id="m301" onclick="getFiveMinDistance(this.id)"></i>
+        <i class="fas fa-map-marker-alt fa-2x icon 3b" id="m302" onclick="getFiveMinDistance(this.id)"></i>
+        <i class="fas fa-map-marker-alt fa-2x icon 3b" id="m304" onclick="getFiveMinDistance(this.id)"></i>
+        <i class="fas fa-map-marker-alt fa-2x icon 3b" id="m307" onclick="getFiveMinDistance(this.id)"></i>
+        <i class="fas fa-map-marker-alt fa-2x icon 3b" id="m308" onclick="getFiveMinDistance(this.id)"></i>
+        <i class="fas fa-map-marker-alt fa-2x icon 3b" id="m310" onclick="getFiveMinDistance(this.id)"></i>
+        <i class="fas fa-map-marker-alt fa-2x icon 3b" id="m315" onclick="getFiveMinDistance(this.id)"></i>
+        <i class="fas fa-map-marker-alt fa-2x icon 3b" id="m317" onclick="getFiveMinDistance(this.id)"></i>
+        <i class="fas fa-map-marker-alt fa-2x icon 3b" id="m318" onclick="getFiveMinDistance(this.id)"></i>
+        <i class="fas fa-map-marker-alt fa-2x icon 3b" id="m319" onclick="getFiveMinDistance(this.id)"></i>
+    </div>
+
+
     <script>
         function searchApartment() {
             var e = document.getElementById("list");
             var ap = e.options[e.selectedIndex].text;
             var hide = document.getElementsByClassName("icon");
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.clearRect(0, 0, c.width, c.height);
             for (var i = 0; i < hide.length; i++) {
                 hide[i].style.visibility = "hidden";
             }
@@ -52,21 +82,37 @@
                     ap2[i].style.visibility = "visible";
                 }
             }
+            if (ap === "3 bedroom") {
+                var ap3 = document.getElementsByClassName("3b");
+                for (var i = 0; i < ap3.length; i++) {
+                    ap3[i].style.visibility = "visible";
+                }
+            }
+        }
+
+        function getFiveMinDistance(a) {
+            var b = document.getElementById(a);
+            var cls = b.classList[b.classList.length - 1];
+            var el = document.getElementsByClassName(cls)
+            var y = b.offsetTop;
+            var x = b.offsetLeft;
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.clearRect(0, 0, c.width, c.height);
+            ctx.beginPath();
+            ctx.arc(x, y, 390, 0, 2 * Math.PI);
+            ctx.strokeStyle = "blue";
+            ctx.lineWidth = 5;
+            ctx.stroke();
+            for (var i = 0; i < el.length; i++) {
+                if (el[i].id === a) {
+                    b.style.color = "yellow";
+                } else {
+                    el[i].style.color = "red";
+                }
+            }
         }
     </script>
-    <div class="imagemap">
-        <img src="map.PNG">
-    </div>
-    <i class="fas fa-map-marker-alt fa-2x icon 1b" id="m114"></i>
-    <i class="fas fa-map-marker-alt fa-2x icon 1b" id="m135"></i>
-    <i class="fas fa-map-marker-alt fa-2x icon 2b" id="m205"></i>
-    <i class="fas fa-map-marker-alt fa-2x icon 2b" id="m226"></i>
-
-    
-    
-
-
-    <!-- <script src="" async defer></script> -->
 </body>
 
 </html>
