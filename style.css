@@ -3,30 +3,128 @@
     visibility: hidden;
 }
 
-.imagemap {
+.parent {
     position: relative;
+}
+
+.imagemap {
+    position: absolute;
+}
+
+#myCanvas {
+    position: absolute;
 }
 
 #m114 {
     position: absolute;
-    top: 451px;
-    left: 159px;
+    top: 425px;
+    left: 147px;
+}
+
+#m130 {
+    position: absolute;
+    top: 535px;
+    left: 231px;
 }
 
 #m135 {
     position: absolute;
-    top: 479px;
-    left: 203px;
+    top: 453px;
+    left: 191px;
 }
 
 #m205 {
     position: absolute;
-    top: 448px;
-    left: 276px;
+    top: 423px;
+    left: 264px;
+}
+
+#m216 {
+    position: absolute;
+    top: 102px;
+    left: 358px;
+}
+
+#m218 {
+    position: absolute;
+    top: 330px;
+    left: 418px;
+}
+
+#m222 {
+    position: absolute;
+    top: 139px;
+    left: 385px;
+}
+
+#m224 {
+    position: absolute;
+    top: 107px;
+    left: 385px;
 }
 
 #m226 {
     position: absolute;
-    top: 321px;
-    left: 335px;
+    top: 294px;
+    left: 325px;
+}
+
+#m301 {
+    position: absolute;
+    top: 277px;
+    left: 462px;
+}
+
+#m302 {
+    position: absolute;
+    top: 288px;
+    left: 415px;
+}
+
+#m304 {
+    position: absolute;
+    top: 265px;
+    left: 405px;
+}
+
+#m307 {
+    position: absolute;
+    top: 298px;
+    left: 273px;
+}
+
+#m308 {
+    position: absolute;
+    top: 241px;
+    left: 395px;
+}
+
+#m310 {
+    position: absolute;
+    top: 219px;
+    left: 388px;
+}
+
+#m315 {
+    position: absolute;
+    top: 201px;
+    left: 446px;
+}
+
+#m317 {
+    position: absolute;
+    top: 209px;
+    left: 474px;
+}
+
+#m318 {
+    position: absolute;
+    top: 280px;
+    left: 562px;
+}
+
+#m319 {
+    position: absolute;
+    top: 218px;
+    left: 498px;
 }
